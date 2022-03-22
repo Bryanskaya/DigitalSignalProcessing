@@ -12,16 +12,20 @@ function lab02
     yGauArr = gaussSignal(xArr);
 
     % БПФ (с эффектом близнецов)
+    tic
     yRecFFT = fft(yRecArr);
     yGauFFT = fft(yGauArr);
+    toc
 
     % Устранение эффекта близнецов
     yRecFFT_NT = fftshift(yRecFFT);
     yGauFFT_NT = fftshift(yGauFFT);
 
     % ДПФ (с эффектом близнецов)
+    tic
     yRecDFT = dft(yRecArr);
     yGauDFT = dft(yGauArr);
+    toc
 
     % Устранение эффекта близнецов
     yRecDFT_NT = fftshift(yRecDFT);
