@@ -18,7 +18,6 @@ function lab03
 	y2 = ifft(fft(x1).* fft(x3)) * step; % Прямоугольный + прямоугольный
 	y3 = ifft(fft(x2).* fft(x4)) * step; % Гаусс + Гаусс
 
-	% Нормализация свёртки
 	start = fix((length(y1) - length(t)) / 2);
 	y1 = y1(start+1:start+length(t));
 	y2 = y2(start+1:start+length(t));
